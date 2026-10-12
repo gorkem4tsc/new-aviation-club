@@ -231,7 +231,10 @@ section{padding-block:clamp(72px,10vw,120px)}
 .team .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px}
 .member{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:20px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px}
 .member .av{width:96px;height:96px;border-radius:50%;padding:3px;background:linear-gradient(45deg,var(--ig-1),var(--ig-2),var(--ig-3),var(--ig-4))}
-.member .av div{width:100%;height:100%;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-weight:800;font-size:22px;border:3px solid var(--card)}
+.member .av img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.member .av div{overflow:hidden;width:100%;height:100%;border-radius:50%;background:var(--navy);color:var(--gold);display:grid;place-items:center;font-weight:800;font-size:22px;border:3px solid var(--card)}
+.btn-wa{background:#25d366;color:#0b1430}
+.btn-wa:hover{background:#3ae07a;box-shadow:0 8px 24px rgba(37,211,102,.35)}
 .member b{font-size:16px}
 .member span{font-size:13px;color:var(--fg-2)}
 
@@ -408,6 +411,7 @@ footer .bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,25
       <div class="cta rv" id="heroCta">
         <a class="btn btn-gold" href="#uye-ol">Üye Ol</a>
         <a class="btn btn-ghost" href="#nfc">Standa gel, NFC okut</a>
+        <a class="btn btn-wa" href="https://chat.whatsapp.com/Kk7ldgNOloPA4exvqRSBvS" target="_blank" rel="noopener">WhatsApp grubu</a>
       </div>
       <div class="stats rv" id="heroStats">
         <div class="stat"><b data-count="284">0</b><span>Instagram takipçisi</span></div>
@@ -604,7 +608,7 @@ footer .bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,25
         <div class="step rv"><div class="n">4</div><div><b>Üyelerimizden detaylı bilgi al</b><p>Hangi komiteye katılabilirsin, ilk etkinlik ne zaman, yurt dışı fırsatları neler? Hepsini standda konuşalım.</p></div></div>
       </div>
       <div class="photo nfc-photo rv"><img src="img/nfc.jpg" alt="Standdaki NFC etiketine telefon yaklaştırılıyor" loading="lazy"><span class="cap">Standda NFC etiketi · tek dokunuş</span></div>
-      <p class="nfc-note rv"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><span>NFC'si olmayan telefon mu? Standdaki QR kodu okut ya da aşağıdaki formu doğrudan doldur.</span></p>
+      <p class="nfc-note rv"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg><span>NFC'si olmayan telefon mu? Standdaki QR kodu okut, aşağıdaki formu doldur ya da doğrudan <a href="https://chat.whatsapp.com/Kk7ldgNOloPA4exvqRSBvS" target="_blank" rel="noopener" style="color:var(--gold);font-weight:600">WhatsApp duyuru grubuna</a> katıl.</span></p>
     </div>
 
     <div class="phone-stage" id="phoneStage">
@@ -615,7 +619,7 @@ footer .bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,25
           <div class="scr-top">nev-aviation.club/kayit</div>
           <div class="scr-card"><b>Hoş geldin! 👋</b>NEW Aviation Club standına dokundun. Aşağıdan 30 saniyede üye ol.</div>
           <div class="scr-card">📅 Sıradaki etkinlik<br><b style="margin-top:4px">Tanışma Toplantısı</b>NeoTech · Yakında</div>
-          <div class="scr-card">💬 Duyuru grubuna katıl</div>
+          <div class="scr-card">💬 WhatsApp duyuru grubuna katıl</div>
           <div class="scr-btn">Üye Ol</div>
         </div>
       </div>
@@ -671,6 +675,7 @@ footer .bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,25
         <div class="big"><svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
         <b>Boarding pass'in hazır!</b>
         <p id="okText">Kaydın alındı. Ekibimiz en kısa sürede e-posta ile sana ulaşacak. Standa uğrayıp selam vermeyi unutma.</p>
+        <a class="btn btn-wa" style="margin-top:18px;width:auto" href="https://chat.whatsapp.com/Kk7ldgNOloPA4exvqRSBvS" target="_blank" rel="noopener">WhatsApp grubuna katıl</a>
       </div>
     </form>
   </div>
@@ -681,21 +686,21 @@ footer .bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,25
   <div class="wrap">
     <span class="eyebrow rv">Ekibimizle Tanışın</span>
     <h2 class="h2 rv">2026–2027 Yönetim Ekibi</h2>
-    <p class="lead rv">Standda bu ekipten birini gör, sorularını sor. Üyelerimiz kulübü ve komiteleri sana detaylı anlatacak.</p>
+    <p class="lead rv">Birlikte daha yükseğe! Standda bu ekipten birini gör, sorularını sor. Üyelerimiz kulübü ve komiteleri sana detaylı anlatacak.</p>
     <div class="team-strip">
       <div class="photo rv"><img src="img/terminal.jpg" alt="Terminalde yürüyen öğrenciler" loading="lazy"><span class="cap">Birlikte uçuyoruz</span></div>
       <div class="photo rv"><img src="img/hands.jpg" alt="Ekip el ele, IFTE tarihleri avuçlarında" loading="lazy"><span class="cap">Reels · "17-19 Nisan"</span></div>
       <div class="photo rv"><img src="img/team.jpg" alt="Ekibimizle Tanışın 2026-2027 afişi" loading="lazy"><span class="cap">Ekibimizle Tanışın</span></div>
     </div>
     <div class="grid">
-      <div class="member rv"><div class="av"><div>BŞK</div></div><b>Kulüp Başkanı</b><span>Genel koordinasyon · SKS iletişimi</span></div>
-      <div class="member rv"><div class="av"><div>BY</div></div><b>Başkan Yardımcısı</b><span>Etkinlik planlama · Sponsorluk</span></div>
-      <div class="member rv"><div class="av"><div>ETK</div></div><b>Etkinlik Komitesi</b><span>Zirve, SkyTalks, teknik geziler</span></div>
-      <div class="member rv"><div class="av"><div>SM</div></div><b>Sosyal Medya Komitesi</b><span>Instagram, içerik ve tasarım</span></div>
-      <div class="member rv"><div class="av"><div>ÜYE</div></div><b>Üye İlişkileri</b><span>Kayıt, NFC stant, WhatsApp grubu</span></div>
-      <div class="member rv"><div class="av"><div>DIŞ</div></div><b>Dış İlişkiler</b><span>Havayolu, fuar ve kurum bağlantıları</span></div>
-      <div class="member rv"><div class="av"><div>KRY</div></div><b>Kariyer Komitesi</b><span>Staj, mülakat, CV atölyeleri</span></div>
-      <div class="member rv"><div class="av"><div>SEN</div></div><b>Sıradaki üye</b><span>Bu kart senin için ayrıldı.</span></div>
+      <div class="member rv"><div class="av"><div><img src="img/team/yusuf.jpg" alt="Yusuf Öztürk" loading="lazy"></div></div><b>Yusuf Öztürk</b><span>Kulüp Başkanı</span></div>
+      <div class="member rv"><div class="av"><div><img src="img/team/berrin.jpg" alt="Berrin Adanur" loading="lazy"></div></div><b>Berrin Adanur</b><span>Başkan Yardımcısı</span></div>
+      <div class="member rv"><div class="av"><div><img src="img/team/mustafa.jpg" alt="Mustafa Kemal Yaşar" loading="lazy"></div></div><b>Mustafa Kemal Yaşar</b><span>Sosyal Medya Başkanı</span></div>
+      <div class="member rv"><div class="av"><div><img src="img/team/sura.jpg" alt="Sura Sancaktar" loading="lazy"></div></div><b>Sura Sancaktar</b><span>Kurumsal İletişim Başkanı</span></div>
+      <div class="member rv"><div class="av"><div><img src="img/team/osman.jpg" alt="Osman Arslan" loading="lazy"></div></div><b>Osman Arslan</b><span>Etkinlik ve Organizasyon Başkanı</span></div>
+      <div class="member rv"><div class="av"><div><img src="img/team/beyza.jpg" alt="Beyza Güler" loading="lazy"></div></div><b>Beyza Güler</b><span>İnsan Kaynakları Başkanı</span></div>
+      <div class="member rv"><div class="av"><div><img src="img/team/mirac.jpg" alt="Miraç Öztürk" loading="lazy"></div></div><b>Miraç Öztürk</b><span>Sayman</span></div>
+      <div class="member rv"><div class="av"><div>MÖ</div></div><b>Mehmet Önal</b><span>Sosyal Medya</span></div>
     </div>
   </div>
 </section>
@@ -760,7 +765,7 @@ footer .bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,25
       </div>
       <div>
         <h4>Bağlantılar</h4>
-        <ul><li><a href="https://www.instagram.com/nev_newaviationclub/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://www.instagram.com/sks_nisantasiedu/" target="_blank" rel="noopener">SKS Nişantaşı</a></li><li><a href="https://www.nisantasi.edu.tr" target="_blank" rel="noopener">nisantasi.edu.tr</a></li><li>Maslak NeoTech Kampüsü, İstanbul</li></ul>
+        <ul><li><a href="https://www.instagram.com/nev_newaviationclub/" target="_blank" rel="noopener">Instagram</a></li><li><a href="https://chat.whatsapp.com/Kk7ldgNOloPA4exvqRSBvS" target="_blank" rel="noopener">WhatsApp duyuru grubu</a></li><li><a href="https://www.instagram.com/sks_nisantasiedu/" target="_blank" rel="noopener">SKS Nişantaşı</a></li><li><a href="https://www.nisantasi.edu.tr" target="_blank" rel="noopener">nisantasi.edu.tr</a></li><li>Maslak NeoTech Kampüsü, İstanbul</li></ul>
       </div>
     </div>
     <div class="bottom"><span>© 2026 NEW Aviation Club · İstanbul Nişantaşı Üniversitesi</span><span>Keşfet · Öğren · Üret · Uç</span></div>
