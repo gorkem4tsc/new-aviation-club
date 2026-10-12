@@ -856,11 +856,16 @@ footer .bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,25
   gsap.to(track,{x:()=>-(span.offsetWidth+48),duration:18,ease:'none',repeat:-1});
 
   // ---- scroll reveals (batched) ----
+  const reveal = batch => gsap.from(batch,{y:34,opacity:0,duration:.8,stagger:.08,ease:'power3.out',overwrite:true});
   ScrollTrigger.batch('.rv:not(.hero .rv)',{
-    start:'top 88%',
+    start:'top 92%',
     once:true,
-    onEnter:batch => gsap.from(batch,{y:34,opacity:0,duration:.8,stagger:.08,ease:'power3.out',overwrite:true})
+    onEnter:reveal,
+    onEnterBack:reveal
   });
+  // lazy images change layout; keep trigger positions fresh
+  window.addEventListener('load', () => ScrollTrigger.refresh());
+  document.querySelectorAll('img[loading="lazy"]').forEach(img => img.addEventListener('load', () => ScrollTrigger.refresh(), {once:true}));
 
   // pillars pop
   gsap.from('.pillar .ico',{scale:0,rotate:-20,duration:.6,stagger:.08,ease:'back.out(2)',scrollTrigger:{trigger:'.pillars',start:'top 80%',once:true}});
