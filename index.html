@@ -861,10 +861,15 @@ footer .bottom{margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,25
   gsap.to(track,{x:()=>-(span.offsetWidth+48),duration:18,ease:'none',repeat:-1});
 
   // ---- scroll reveals (batched) ----
-  const reveal = batch => gsap.from(batch,{y:34,opacity:0,duration:.8,stagger:.08,ease:'power3.out',overwrite:true});
-  ScrollTrigger.batch('.rv:not(.hero .rv)',{
+  // Only animate elements that are actually below the fold at load; anything already
+  // scrolled past (deep links like #ekip) stays at its visible rest state.
+  const below = [...document.querySelectorAll('.rv')].filter(el => !el.closest('.hero') && el.getBoundingClientRect().top > window.innerHeight * .92);
+  const reveal = batch => gsap.from(batch,{y:34,opacity:0,duration:.7,stagger:.06,ease:'power3.out',overwrite:true});
+  if (below.length) ScrollTrigger.batch(below,{
     start:'top 92%',
     once:true,
+    batchMax:8,
+    interval:.12,
     onEnter:reveal,
     onEnterBack:reveal
   });
